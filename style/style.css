@@ -1,0 +1,89 @@
+/* Base Styles */
+:root {
+    --black: #37322f;
+    --white: #eee6d2;
+    --green: #c8fcc5;
+}
+
+body {
+    background-color: var(--white);
+}
+
+header,
+footer {
+    color: var(--green);
+    background-color: var(--black);
+    text-align: center;
+}
+
+.recipe-card {
+    color: var(--green);
+    background-color: var(--black);
+    padding: 1rem;
+    margin: 1rem;
+}
+/* End Base Styles */
+
+/* Header */
+#site-title {
+    text-decoration: none;
+}
+
+header a {
+    color: var(--green);
+}
+
+nav, nav a {
+    padding: 1rem;
+}
+/* End Header */
+
+
+/* Index */
+#hero-image {
+    width: 100%;
+}
+/* End Index */
+
+
+/*! Recipe Form */
+form {
+    margin: auto;
+    max-width: 300px;
+}
+
+form>div {
+    padding-top: 1rem;
+}
+
+#submitRecipeBtn {
+    margin-top: 1rem;
+    padding: .5rem;
+}
+
+input,
+textarea {
+    display: block;
+    width: 100%;
+}
+
+/* ?@keyframes animation {
+    0% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: blue;
+    }
+
+    100% {
+        background-color: green;
+    }
+}
+
+body {
+    animation-name: animation;
+    animation-duration: 5s;
+} */
+/* ? */
+/*! End Recipe Form */
