@@ -5,11 +5,11 @@ async function queryFetch(search) {
     const url = "https://api.spoonacular.com/recipes/complexSearch/?apiKey=fe355abf4202442b8a3dd4225ce62f11&query=" + search;
     const response = await fetch(url);
     var object = await response.json();
-    console.log(object.results);
     return object.results;
 }
 
 async function buildCards() {
+    startBtnAnimation();
     var search = document.querySelector('#search').value;
     let array = await queryFetch(search);
     for (let i = 0; i < array.length; i++) {
@@ -18,6 +18,7 @@ async function buildCards() {
         let currentTitle = currentObject.title;
         cardContent(currentImg, currentTitle);
     }
+    endBtnAnimation();
 }
 
 function cardContent(src, text) {
@@ -31,4 +32,12 @@ function cardContent(src, text) {
     div.prepend(heading);
     div.append(image);
     container.append(div);
+}
+
+function startBtnAnimation() {
+    btn.classList.add('recipe-btn-active');
+}
+
+function endBtnAnimation() {
+    btn.classList.remove('recipe-btn-active');
 }

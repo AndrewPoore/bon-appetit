@@ -7,6 +7,9 @@
 
 body {
     background-color: var(--white);
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
 header,
@@ -16,43 +19,99 @@ footer {
     text-align: center;
 }
 
+header h1,
+nav {
+    margin: 0;
+    margin: .5rem;
+    color: var(--green);
+}
+
+nav a {
+    color: var(--green);
+}
+
+nav a:hover {
+    color: var(--black);
+    background-color: var(--green);
+}
+
+header a {
+    text-decoration: none;
+}
+
+/* End Base Styles */
+
+/* Header */
+
+/* End Header */
+
+/* Index */
+#index-main {
+    background-image: url('/imgs/test.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#index-nav {
+    background-color: var(--black);
+    padding: .5rem 0;
+}
+
+#index-nav:hover {}
+
+.index-links {
+    padding: .5rem;
+}
+
+.index-links:hover {}
+
+/* End Index */
+
+/* Recipe Generator */
+#recipe-btn {
+    background-color: var(--black);
+    color: var(--green);
+}
+
+@keyframes fetch {
+    0% {
+        background-color: var(--black);
+    }
+    
+    50% {
+        background-color: var(--green);
+    }
+
+    100% {
+        background-color: var(--black);
+    }
+}
+
+.recipe-btn-active {
+    animation-name: fetch;
+    animation-duration: .25s;
+    animation-iteration-count: infinite;
+}
+
 .recipe-card {
     color: var(--green);
     background-color: var(--black);
     padding: 1rem;
     margin: 1rem;
 }
-/* End Base Styles */
+/* End Recipe Generator */
 
-/* Header */
-#site-title {
-    text-decoration: none;
-}
-
-header a {
-    color: var(--green);
-}
-
-nav, nav a {
-    padding: 1rem;
-}
-/* End Header */
-
-
-/* Index */
-#hero-image {
-    width: 100%;
-}
-/* End Index */
-
-
-/*! Recipe Form */
-form {
+/* Recipe Form */
+form,
+#search-ctn {
     margin: auto;
     max-width: 300px;
 }
 
-form>div {
+form div {
     padding-top: 1rem;
 }
 
@@ -67,23 +126,4 @@ textarea {
     width: 100%;
 }
 
-/* ?@keyframes animation {
-    0% {
-        background-color: red;
-    }
-
-    50% {
-        background-color: blue;
-    }
-
-    100% {
-        background-color: green;
-    }
-}
-
-body {
-    animation-name: animation;
-    animation-duration: 5s;
-} */
-/* ? */
-/*! End Recipe Form */
+/* End Recipe Form */
