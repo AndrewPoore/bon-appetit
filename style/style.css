@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,600;1,600&family=Raleway:ital,wght@0,500;1,500&display=swap');
+
 /* Base Styles */
 :root {
     --black: #37322f;
     --white: #eee6d2;
     --green: #c8fcc5;
+
+    --display-font: "Josefin Slab", serif;
+    /* font-weight: 600; */
+
+    --body-text: "Raleway", sans-serif;
+    /* font-weight: 500; */
 }
 
 body {
@@ -19,15 +27,38 @@ footer {
     text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+footer p {
+    font-family: var(--display-font);
+}
+
+.btn {
+    border-style: none;
+    padding: .5rem;
+    margin: 0;
+}
+
+main,
+nav a {
+    font-family: var(--body-text);
+}
+
 header h1,
 nav {
-    margin: 0;
+    padding: .5rem 0;
     margin: .5rem;
     color: var(--green);
+    background-color: var(--black);
 }
 
 nav a {
     color: var(--green);
+    padding: .5rem;
 }
 
 nav a:hover {
@@ -39,11 +70,18 @@ header a {
     text-decoration: none;
 }
 
+#recipe-btn,
+#submit-btn {
+    background-color: var(--black);
+    color: var(--green);
+}
+
+#recipe-btn:hover,
+#submit-btn:hover {
+    cursor: pointer;
+}
+
 /* End Base Styles */
-
-/* Header */
-
-/* End Header */
 
 /* Index */
 #index-main {
@@ -55,32 +93,25 @@ header a {
     align-items: center;
 }
 
-#index-nav {
-    background-color: var(--black);
-    padding: .5rem 0;
-}
-
-#index-nav:hover {}
-
-.index-links {
-    padding: .5rem;
-}
-
-.index-links:hover {}
-
 /* End Index */
 
 /* Recipe Generator */
-#recipe-btn {
-    background-color: var(--black);
-    color: var(--green);
+#search-btn,
+#search {
+    border: none;
+    padding: .5rem;
+}
+
+.main {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 @keyframes fetch {
     0% {
         background-color: var(--black);
     }
-    
+
     50% {
         background-color: var(--green);
     }
@@ -92,7 +123,7 @@ header a {
 
 .recipe-btn-active {
     animation-name: fetch;
-    animation-duration: .25s;
+    animation-duration: .35s;
     animation-iteration-count: infinite;
 }
 
@@ -102,28 +133,30 @@ header a {
     padding: 1rem;
     margin: 1rem;
 }
+
 /* End Recipe Generator */
 
 /* Recipe Form */
-form,
-#search-ctn {
-    margin: auto;
-    max-width: 300px;
-}
-
-form div {
-    padding-top: 1rem;
-}
-
-#submitRecipeBtn {
-    margin-top: 1rem;
+.form-ctn {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    color: var(--green);
+    margin: 1rem 0;
     padding: .5rem;
 }
 
-input,
-textarea {
-    display: block;
-    width: 100%;
+.form-ctn label {
+    margin: .5rem;
 }
 
+.form-ctn input,
+.form-ctn textarea {
+    margin: .5rem;
+    padding: .5rem;
+}
+
+#submit-btn {
+    margin-bottom: 1rem;
+}
 /* End Recipe Form */

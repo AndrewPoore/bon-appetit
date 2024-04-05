@@ -24,7 +24,7 @@ async function buildCards() {
 function cardContent(src, text) {
     let div = document.createElement('div');
     let image = document.createElement('img');
-    let heading = document.createElement('h3');
+    let heading = document.createElement('h2');
     let container = document.querySelector('#cardCtn');
     image.src = src;
     heading.textContent = text;
@@ -41,3 +41,11 @@ function startBtnAnimation() {
 function endBtnAnimation() {
     btn.classList.remove('recipe-btn-active');
 }
+
+
+
+
+
+
+
+
