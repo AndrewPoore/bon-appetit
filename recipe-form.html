@@ -29,21 +29,21 @@
         <formfield>
             <form id="recipe-form">
                 <div class="form-ctn">
-                    <Label>Email: </Label>
-                    <input name="email" id="email" placeholder="johndoe@gmail.com" type="email">
+                    <Label>Title: </Label>
+                    <input name="title" id="title" placeholder="Mushroom Risotto" type="text">
                 </div>
                 <div class="form-ctn">
-                    <Label>Recipe Name: </Label>
-                    <input id="recipeTitle" placeholder="Spicy Kung Fu Panda Noodles" type="text">
+                    <Label>Servings: </Label>
+                    <input id="servings" placeholder="4" type="text">
                 </div>
                 <div class="form-ctn">
-                    <Label>Recipe Ingredients: </Label>
-                    <textarea id="recipeIngredients"
-                        placeholder="Rice noodles, garlic, chicken, broccoli, carrots, soy sauce, and an egg."></textarea>
+                    <Label>Ingredients: </Label>
+                    <textarea id="ingredients"
+                        placeholder="Arborio rice, unsalted chicken stock..."></textarea>
                 </div>
                 <div class="form-ctn">
                     <Label>Instructions: </Label>
-                    <textarea id="recipeInstructions" placeholder="1. heat pan with olive oil. &#10;2. ..."></textarea>
+                    <textarea id="instructions" placeholder="1. heat pan with olive oil. &#10;2. ..."></textarea>
                 </div>
                 <input id="submit-btn" class="btn" type="submit">
             </form>
@@ -57,5 +57,6 @@
 </body>
 <script src="js/main.js"></script>
 <script src="js/recipeForm.js"></script>
+<script type="module" src="js/utils.mjs"></script>
 
 </html>
