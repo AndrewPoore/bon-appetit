@@ -42,10 +42,11 @@ form.addEventListener('submit', function (e) {
         headers: {
             Origin: '*'
         }
-        // Access-Control-Allow-Origin: *
         // headers: {
-        //     origin: "*"
-        //     // "Access-Control-Allow-Origin" : "*"
+        //! origin: "*"
+        //! Access-Control-Allow-Origin: *
+        //! "Access-Control-Allow-Origin" : "*"
+        //! "Access-Control-Allow-Origin: *"
         // }
     })
         .then(res => res.json())

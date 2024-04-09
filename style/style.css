@@ -86,7 +86,7 @@ header a {
 
 /* Index */
 #index-main {
-    background-image: url('/imgs/test.jpg');
+    background-image: url('https://cdn.glitch.global/20ce3369-a4b1-4cb8-9d64-c0ff6b200c1b/test.jpg?v=1712698884122');
     background-position: center;
     background-size: cover;
     display: flex;
