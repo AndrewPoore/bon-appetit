@@ -3,6 +3,7 @@ export function checkLocalStorage() {
         let div = document.createElement('div');
         let heading = document.createElement('h3');
         let btn = document.createElement('button');
+        let icon = document.createElement('img');
         let p = document.createElement('p');
         let image = document.createElement('img');
         let main = document.querySelector('main');
@@ -10,10 +11,11 @@ export function checkLocalStorage() {
         div.classList.add('message-ctn');
         heading.classList.add('message-h3');
         btn.classList.add('message-btn');
+        icon.classList.add('icon');
         p.classList.add('message-p');
 
         heading.textContent = `Welcome to Bon Appétit!`;
-        btn.textContent = `✖️`;
+        // btn.textContent = `✖️`;
         p.textContent = `Welcome to [Your Project Name]!
         
         We're delighted to welcome you to our final project website. Whether you stumbled upon us by chance or sought us out intentionally, we're thrilled to have you here.
@@ -27,10 +29,12 @@ export function checkLocalStorage() {
         Welcome to the world of [Your Project Name]!
         
         [Your Name/Project Team Name]`;
-        image.src = 'imgs/cake.jpg';
+        image.src = 'https://cdn.glitch.global/20ce3369-a4b1-4cb8-9d64-c0ff6b200c1b/cake.JPG?v=1712699257585';
         image.alt = `Me making pineapple upside down cake.`;
+        icon.src = 'imgs/x-icon.png';
 
         div.append(btn);
+        btn.append(icon);
         main.append(div);
         div.append(heading);
         div.append(p);

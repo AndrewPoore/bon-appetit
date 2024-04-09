@@ -104,8 +104,15 @@ header a {
 }
 
 .main {
+    /* min-width: 60vw; */
     max-width: 960px;
     margin: 0 auto;
+}
+
+@media only screen and (min-width:960px) {
+#cardCtn {
+    width: 960px;
+}    
 }
 
 @keyframes fetch {
@@ -178,11 +185,20 @@ header a {
 }
 
 .message-ctn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--green);
+    width: 25px;
+    height: 25px;
     border: none;
-    padding: .1rem;
+    padding: 0;
     border-radius: 20%;
     float: right;
+}
+
+.icon {
+    width: 20px;
 }
 
 .message-ctn button:hover, .message-ctn button:active {
