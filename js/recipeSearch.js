@@ -1,5 +1,4 @@
-let btn = document.querySelector('#recipe-btn');
-btn.addEventListener('click', buildCards);
+import { lastModified, checkLocalStorage, closeMessage, startBtnAnimation, endBtnAnimation } from "./utils.mjs";
 
 async function queryFetch(search) {
     const url = "https://api.spoonacular.com/recipes/complexSearch/?apiKey=fe355abf4202442b8a3dd4225ce62f11&query=" + search;
@@ -34,18 +33,13 @@ function cardContent(src, text) {
     container.append(div);
 }
 
-function startBtnAnimation() {
-    btn.classList.add('recipe-btn-active');
-}
-
-function endBtnAnimation() {
-    btn.classList.remove('recipe-btn-active');
-}
+lastModified();
+checkLocalStorage();
 
 
 
+//Recipe Search
+let btn = document.querySelector('#recipe-btn');
+btn.addEventListener('click', buildCards);
 
-
-
-
-
+document.querySelector('.message-btn').addEventListener('click', closeMessage);

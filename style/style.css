@@ -160,25 +160,40 @@ header a {
 #submit-btn {
     margin-bottom: 1rem;
 }
-
 /* End Recipe Form */
 
+/* First-Time User Window */
 .message-ctn {
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
     padding: 1rem;
     max-width: 80vw;
     margin: 2rem auto;
+    box-shadow: 10px 15px 7px #000;
+}
+
+.message-ctn h3 {
+    color: var(--green);
 }
 
 .message-ctn button {
+    background-color: var(--green);
+    border: none;
+    padding: .1rem;
+    border-radius: 20%;
     float: right;
 }
 
+.message-ctn button:hover, .message-ctn button:active {
+    background-color: red;
+}
+
 .message-ctn img {
-    max-width: 100%;
+    max-width: 300px;
 }
 
 .hidden {
     display: none;
 }
+/* End First-Time User Window */
