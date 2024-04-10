@@ -5,12 +5,8 @@
     --black: #37322f;
     --white: #eee6d2;
     --green: #c8fcc5;
-
     --display-font: "Josefin Slab", serif;
-    /* font-weight: 600; */
-
     --body-text: "Raleway", sans-serif;
-    /* font-weight: 500; */
 }
 
 body {
@@ -103,8 +99,7 @@ header a {
     padding: .5rem;
 }
 
-.main {
-    /* min-width: 60vw; */
+#sub-main {
     max-width: 960px;
     margin: 0 auto;
 }

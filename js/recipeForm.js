@@ -20,8 +20,8 @@ import { lastModified, checkLocalStorage, closeMessage } from "./utils.mjs";
 
 const form = document.querySelector('#form');
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+form.addEventListener('submit', event => {
+    event.preventDefault();
 
     const payload = {
         "title": "Spaghetti Carbonara",
@@ -37,22 +37,16 @@ form.addEventListener('submit', function (e) {
     }
 
     fetch(`https://api.spoonacular.com/recipes/analyze/?apiKey=fe355abf4202442b8a3dd4225ce62f11`, {
-        method: "POST",
-        body: payload,
+        method: 'POST',
         headers: {
-            Origin: '*'
-        }
-        // headers: {
-        //! origin: "*"
-        //! Access-Control-Allow-Origin: *
-        //! "Access-Control-Allow-Origin" : "*"
-        //! "Access-Control-Allow-Origin: *"
-        // }
+            'Access-Control-Allow-Origin': '*'
+        },
+        body: payload
     })
         .then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.log(err));
-})
+});
 
 lastModified();
 checkLocalStorage();
