@@ -1,7 +1,7 @@
 import { lastModified, checkLocalStorage, closeMessage, startBtnAnimation, endBtnAnimation } from "./utils.mjs";
 
 async function queryFetch(search) {
-    const url = "https://api.spoonacular.com/recipes/complexSearch/?apiKey=fe355abf4202442b8a3dd4225ce62f11&query=" + search;
+    const url = "https://api.spoonacular.com/recipes/complexSearch/?apiKey=78ffb0b539b043daa6745c6c525bbe44&query=" + search;
     try {
         const response = await fetch(url);
         if (response.ok) {

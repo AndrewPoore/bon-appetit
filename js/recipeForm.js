@@ -1,9 +1,9 @@
-import { lastModified, checkLocalStorage, closeMessage, startBtnAnimation, endBtnAnimation } from "./utils.mjs";
+import { lastModified, checkLocalStorage, closeMessage } from "./utils.mjs";
 
 async function postAPI() {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    const response = await fetch(`https://corsproxy.io/?https://api.spoonacular.com/recipes/analyze/?apiKey=fe355abf4202442b8a3dd4225ce62f11`, {
+    const response = await fetch(`https://corsproxy.io/?https://api.spoonacular.com/recipes/analyze/?apiKey=78ffb0b539b043daa6745c6c525bbe44`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
