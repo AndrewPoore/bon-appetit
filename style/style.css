@@ -44,6 +44,10 @@ nav a {
     font-family: var(--body-text);
 }
 
+#sub-main {
+    margin: 0 1rem;
+}
+
 header h1,
 nav {
     padding: .5rem 0;
@@ -90,6 +94,19 @@ header a {
     align-items: center;
 }
 
+#clear {
+    font-family: var(--body-text);
+    color: var(--black);
+    background-color: var(--green);
+    border: 3px solid var(--white);
+    border-radius: 50px;
+    margin-top: 1rem;
+}
+
+#clear:hover {
+    cursor: pointer;
+}
+
 /* End Index */
 
 /* Recipe Generator */
@@ -99,15 +116,27 @@ header a {
     padding: .5rem;
 }
 
-#sub-main {
-    max-width: 960px;
-    margin: 0 auto;
+@media only screen and (min-width:800px) {
+
+    #cardCtn {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+
 }
 
-@media only screen and (min-width:960px) {
-#cardCtn {
-    width: 960px;
-}    
+@media only screen and (min-width:1320px) {
+
+    #cardCtn {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr)
+    }
+
+    #sub-main {
+        max-width: 90vw;
+        margin: 0 auto;
+    }
 }
 
 @keyframes fetch {
@@ -162,6 +191,7 @@ header a {
 #submit-btn {
     margin-bottom: 1rem;
 }
+
 /* End Recipe Form */
 
 /* First-Time User Window */
@@ -196,7 +226,8 @@ header a {
     width: 20px;
 }
 
-.message-ctn button:hover, .message-ctn button:active {
+.message-ctn button:hover,
+.message-ctn button:active {
     background-color: red;
 }
 
@@ -207,4 +238,5 @@ header a {
 .hidden {
     display: none;
 }
+
 /* End First-Time User Window */

@@ -2,9 +2,18 @@ import { lastModified, checkLocalStorage, closeMessage, startBtnAnimation, endBt
 
 async function queryFetch(search) {
     const url = "https://api.spoonacular.com/recipes/complexSearch/?apiKey=fe355abf4202442b8a3dd4225ce62f11&query=" + search;
-    const response = await fetch(url);
-    var object = await response.json();
-    return object.results;
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            var object = await response.json();
+            console.log(object.results);
+            return object.results;
+        } else {
+            console.log(`Response not OK ${await response.text()}`);
+        }
+    } catch (error) {
+        alert(`Error: ${error.message}`);
+    }
 }
 
 async function buildCards() {
@@ -21,22 +30,21 @@ async function buildCards() {
 }
 
 function cardContent(src, text) {
-    let div = document.createElement('div');
-    let image = document.createElement('img');
-    let heading = document.createElement('h2');
     let container = document.querySelector('#cardCtn');
-    image.src = src;
-    heading.textContent = text;
+    let div = document.createElement('div');
+    let heading = document.createElement('h2');
+    let image = document.createElement('img');
     div.classList.add('recipe-card');
-    div.prepend(heading);
+    heading.textContent = text;
+    image.src = src;
+    image.alt = text;
+    div.append(heading);
     div.append(image);
-    container.append(div);
+    container.prepend(div);
 }
 
 lastModified();
 checkLocalStorage();
-
-
 
 //Recipe Search
 let btn = document.querySelector('#recipe-btn');

@@ -4,31 +4,21 @@ export function checkLocalStorage() {
         let heading = document.createElement('h3');
         let btn = document.createElement('button');
         let icon = document.createElement('img');
-        let p = document.createElement('p');
+        let p1 = document.createElement('p');
+        let p2 = document.createElement('p');
+        let p3 = document.createElement('p');
+
         let image = document.createElement('img');
         let main = document.querySelector('main');
 
         div.classList.add('message-ctn');
-        heading.classList.add('message-h3');
         btn.classList.add('message-btn');
         icon.classList.add('icon');
-        p.classList.add('message-p');
 
         heading.textContent = `Welcome to Bon Appétit!`;
-        // btn.textContent = `✖️`;
-        p.textContent = `Welcome to [Your Project Name]!
-        
-        We're delighted to welcome you to our final project website. Whether you stumbled upon us by chance or sought us out intentionally, we're thrilled to have you here.
-        
-        This website is the culmination of our hard work, creativity, and dedication. It's a testament to our journey throughout this project and the passion we've poured into every aspect of it.
-        
-        As you navigate through our website, we invite you to immerse yourself in our project. Explore the intricacies of our work, delve into the details, and uncover the stories behind our journey. We've crafted this space to showcase not just our accomplishments, but the learning and growth that have come along the way.
-        
-        Thank you for being a part of this experience. Whether you're here to learn, be inspired, or simply curious, we hope you find what you're looking for and leave feeling enriched.
-        
-        Welcome to the world of [Your Project Name]!
-        
-        [Your Name/Project Team Name]`;
+        p1.textContent = `I am delighted to welcome you to my WDD 330 final project website! This website culminates my hard work, creativity, and dedication.`;
+        p2.textContent = `This website uses localStorage methods (displaying this window for first-time users), data submission and retrieval from an external API (Spoonacular API), DOM manipulation, JavaScript modules, CSS animations, and responsive design.`;
+        p3.textContent = `This app showcases not just my accomplishments, but the learning and growth that have come along the way. With all that being said, bon appétit!`;
         image.src = 'https://cdn.glitch.global/20ce3369-a4b1-4cb8-9d64-c0ff6b200c1b/cake.JPG?v=1712699257585';
         image.alt = `Me making pineapple upside down cake.`;
         icon.src = 'imgs/x-icon.png';
@@ -37,7 +27,12 @@ export function checkLocalStorage() {
         btn.append(icon);
         main.append(div);
         div.append(heading);
-        div.append(p);
+        div.append(p1);
+        div.append(p2);
+        div.append(p3);
+        // div.append(p4);
+        // div.append(p5);
+
         div.append(image);
     }
     if (localStorage.getItem("visited") != "true") {

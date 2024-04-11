@@ -1,51 +1,49 @@
-import { lastModified, checkLocalStorage, closeMessage } from "./utils.mjs";
+import { lastModified, checkLocalStorage, closeMessage, startBtnAnimation, endBtnAnimation } from "./utils.mjs";
 
-// const form = document.querySelector('#form');
+async function postAPI() {
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    const response = await fetch(`https://corsproxy.io/?https://api.spoonacular.com/recipes/analyze/?apiKey=fe355abf4202442b8a3dd4225ce62f11`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
 
-// form.addEventListener('submit', function(e) {
-//     e.preventDefault();
+    if (response.ok) {
+        document.querySelector('.main-content').classList.add('hidden');
+        thankYou();
+        console.log(response);
+    } else {
+        document.querySelector('.main-content').classList.add('hidden');
+        error();
+        console.log(response);
+    }
 
-//     const payload = new FormData(form);
+}
 
-//     console.log(...payload);
+function thankYou() {
+    let thankYouMessage = document.createElement('p');
+    thankYouMessage.textContent = `Your recipe has been successfully submitted to Spoonacular's API! Thank you for using Bon Appétit!`;
+    document.querySelector('main').append(thankYouMessage);
+}
 
-//     fetch(`https://api.spoonacular.com/recipes/analyze`, {
-//         method: "POST",
-//         body: payload,
-//     })
-//     .then(res => res.json())
-//     .then(data => console.log(data))
-//     .then(err => console.log(err));
-// })
+function error() {
+    let error = document.createElement('p');
+    error.textContent = `Unfortunately, there has been an issue submitting your recipe to Spoonacular's API. Please try again later!`;
+    document.querySelector('main').append(error);
+}
 
 const form = document.querySelector('#form');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
-
-    const payload = {
-        "title": "Spaghetti Carbonara",
-        "servings": 2,
-        "ingredients": [
-            "1 lb spaghetti",
-            "3.5 oz pancetta",
-            "2 Tbsps olive oil",
-            "1  egg",
-            "0.5 cup parmesan cheese"
-        ],
-        "instructions": "Bring a large pot of water to a boil and season generously with salt. Add the pasta to the water once boiling and cook until al dente. Reserve 2 cups of cooking water and drain the pasta. "
+    try {
+        postAPI();
+    } catch (err) {
+        alert(err);
     }
-
-    fetch(`https://api.spoonacular.com/recipes/analyze/?apiKey=fe355abf4202442b8a3dd4225ce62f11`, {
-        method: 'POST',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        },
-        body: payload
-    })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
 });
 
 lastModified();
